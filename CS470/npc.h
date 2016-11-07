@@ -16,7 +16,8 @@ private:
 
 
 typedef class npcAttribute {
-
+	physical phsycials;
+	stats npcStats;
 }* attri;
 
 
@@ -24,3 +25,13 @@ class item {
 	int itemID;
 	string name, description;
 };
+
+
+class physical {
+	string hairID, eyesID, gender, bodyType, faceId;
+};
+
+class stats {
+	int Endurance, strength, healthPoints, Dexterity, Intelligence;
+};
+
