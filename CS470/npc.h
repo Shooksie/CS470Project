@@ -135,7 +135,7 @@ public:
 };
 
 template<class inside> class location{
-	int x, y;
+	int x, y; 
 	inside* atPosition;
 };
 
