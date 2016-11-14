@@ -49,20 +49,41 @@ class item {
 	string name, description;
 	map<string, int> effects;
 public: 
-	void setID(int id);
-	void setName(string itemName);
-	void setDesc(string desc);
+	void setID(int id) { itemID = id; };
+	void setName(string itemName) { name = itemName; };
+	void setDesc(string desc) { description = desc; };
 };
 
 
 class physical {
-	string hairID, eyesID, gender, bodyType, faceId;
+	string hairID, eyesID, bodyType, faceId;
+	int gender;
 public:
-
+	void setHair(string id) { hairID = id; };
+	void setEyes(string id) {
+		eyesID = id;
+	};
+	void setGender(int id) {
+		gender = id;
+	};
+	void setBody(string id) {
+		bodyType = id;
+	};
+	void faceID(string id) {
+		faceId = id;
+	};
 };
 
 class stats {
 	int Endurance, strength, healthPoints, Dexterity, Intelligence;
+public:
+	void setEndurance(int endur) {
+		Endurance = endur;
+	};
+	void setStrength(int str) { strength = str; };
+	void setHealth(int health) { healthPoints = health; };
+	void setDex(int dex) { Dexterity = dex; };
+	void setIntel(int intel) { Intelligence = intel; };
 };
 
 class faction {
@@ -77,3 +98,16 @@ class quest {
 	bool completed;
 };
 
+template<class inside> class location{
+	int x, y;
+	inside* atPosition;
+};
+
+template<class gridObj> class grid {
+	int width, height;
+	gridObj* grids;
+public:
+	void createGrid();
+	void setWidth(int x);
+	void setHeight(int y);
+};
