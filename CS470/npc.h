@@ -24,6 +24,7 @@ public:
 	void setID(int id) {
 		iD = id;
 	};
+	void setBlood(int blood) { bloodline = blood; };
 	void setAge(int age) {
 		Age = age; };
 	void setLoyalty(int loyal) { 
@@ -31,6 +32,23 @@ public:
 	void setLevel(int levels) {
 		level = levels;
 	};
+	string getName() { return (fname + " " + lname); };
+	int getID() { return iD; };
+	int getBlood() { return bloodline; };
+	int getAge() { return Age; };
+	int getLoyalty() { return loyalty; };
+	int getFactID() { return factionID; };
+	int getLevel() { return level; };
+	int getExp() { return exp; };
+	attri getAttri() {
+		return npcAttri;
+	}
+	stats* getStats() {
+		return npcAttri->getStats();
+	}
+	physical* getPhys() {
+		return npcAttri->getPhys();
+	}
 };
 
 typedef class npcAttribute {
@@ -40,7 +58,10 @@ public:
 	void setPhyical(physical* physcial) { physcials = physcial; };
 	void setStats(stats* stat) {
 		npcStats = stat;};
-
+	physical* getPhys() { return physcials; };
+	stats* getStats() {
+		return npcStats;
+	}
 }* attri;
 
 
@@ -69,7 +90,7 @@ public:
 	void setBody(string id) {
 		bodyType = id;
 	};
-	void faceID(string id) {
+	void setface(string id) {
 		faceId = id;
 	};
 };
