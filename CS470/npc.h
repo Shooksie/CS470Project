@@ -87,7 +87,12 @@ public:
 };
 
 class faction {
-	int factionId, factionName, Region;
+	int factionId, Region;
+	string factionName;
+public:
+	void setFac(int id) { factionId = id; };
+	void setName(string name) { factionName = name; };
+	void setRegion(int region) { Region = region; };
 };
   
 
@@ -95,7 +100,17 @@ class quest {
 	int questID, assignedBy;
 	string MainObjective;
 	int reward;
-	bool completed;
+	bool completed = false;
+public:
+	void setID(int id) { questID = id; };
+	void setBy(int assigned) {
+		assignedBy = assigned;
+	};
+	void setObjec(string object) {
+		MainObjective = object;
+	};
+	void setReward(int Reward) { reward = Reward; };
+	void complete() { completed = true; }
 };
 
 template<class inside> class location{
@@ -107,7 +122,13 @@ template<class gridObj> class grid {
 	int width, height;
 	gridObj* grids;
 public:
-	void createGrid();
-	void setWidth(int x);
-	void setHeight(int y);
+	void createGrid() {
+		gridObj* x;
+		x = new gridObj[width][height];
+		grids = x;
+
+	};
+	void setWidth(int x) { width = x; };
+	void setHeight(int y) { height = y; };
 };
+
